@@ -1,0 +1,547 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('batuta8.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+}
+
+
+.box {
+position: relative;
+width: 200px;
+height: 200px;
+transform-style: preserve-3d;
+animation: animate 20s linear infinite;
+
+}
+ 
+@keyframes animate {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg); 
+    }
+}
+
+.box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)* 45deg))translateZ(400px);
+    -webkit-box-reflect:below 0px linear gradient(transparent,transparent,#0004) ;
+}
+
+.box span img {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 10px;
+}
+
+/* Estilos para la navegación */
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.226); /* Fondo semitransparente */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.navigation li {
+    list-style: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 5px 10px; /* Espacio alrededor de los botones */
+    border-radius: 5px; /* Bordes redondeados para los botones */
+    background-color: rgba(255, 0, 0, 0.233); /* Fondo semitransparente para los botones */
+}
+
+.navigation a:hover {
+    background-color: rgba(255, 0, 0, 1); /* Cambio de color al pasar el mouse */
+    color: #fff;
+}
+
+/* Estilos para el contenido de la página */
+#servicios {
+    padding-top: 30px; /* Espacio en la parte superior */
+    padding-bottom: 80px; /* Espacio en la parte inferior */
+}
+
+/* Estilos para el footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333333fa;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+#final{
+    font-size:18px;
+    line-height: 1.6;
+    color: #050505;
+    margin-bottom: 10px; 
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.social-icons a {
+    color: rgb(55, 143, 243);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff0000;
+}
+ 
+/* Estilos para la sección "Corporación Batuta Meta" */
+.corporacion {
+    background-color: #f9f9f9; /* Color de fondo */
+    padding: 40px; /* Espaciado interno */
+    text-align: center;
+}
+
+.corporacion h2 {
+    font-size: 24px; /* Tamaño del título */
+    color: #333; /* Color del título */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.corporacion p {
+    font-size: 16px; /* Tamaño del texto */
+    color: #666; /* Color del texto */
+    line-height: 1.6; /* Espacio entre líneas */
+}
+
+/* Estilos para la sección "servicios" */
+
+#servicios{
+ display: flex;
+ justify-content: center;  
+ align-items: center;
+ flex-wrap: wrap;
+ transform-style: preserve-3d;
+ width: 1200px;
+}
+
+#servicios .card1{
+position: relative;
+width: 320px;
+height: 320px;
+margin: 20px;
+transform-style: preserve-3d;
+perspective: 1000px;
+transition: 1s ease;
+}
+
+#servicios .card1 .box1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+}
+
+#servicios .card1:hover .box1 {
+    transform: rotateY(180deg);
+}
+
+#servicios .card1 .box1 .imgex img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#servicios .card1 .box1 .contenido{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #317fd8fa;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+#servicios .card1 .box1 .contenido div{
+    padding: 20px;
+    background: linear-gradient(45deg, rgb(58, 61, 223), rgb(76, 100, 238));
+    transform: translateZ(100px);
+}
+
+#servicios .card1 .box1 .contenido div h2{
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+#servicios .card1 .box1 .contenido div  p {
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Estilos para la sección "proyect de galeria" */
+
+
+.projects {
+    background: #f2f2f200;
+    height: 90vh; /* Ocupa el 90% de la altura de la ventana */
+    width: 90vw; /* Ocupa el 90% del ancho de la ventana */
+    margin: auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Agrega espacio de relleno */
+    padding-top: 50px; /* Espacio en la parte superior */
+    padding-bottom: 200px; /* Espacio en la parte inferior */
+}
+
+.projects__grid {
+    display: grid;
+    height: 550px;
+    grid-template-areas:
+        "imagen1 imagen2 imagen3 imagen4"
+        "imagen5 imagen6 imagen7 imagen8"
+        "imagen9 imagen10 imagen11 imagen12"
+        "imagen13 imagen14 imagen15 imagen16";
+    gap: 10px;
+}
+
+.projects__item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.projects__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.projects__img:hover {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+.projects__item:nth-of-type(1) {
+    grid-area:  imagen1;
+    animation-delay: 0.1s;
+}
+
+.projects__item:nth-of-type(2) {
+    grid-area:  imagen2;
+    animation-delay: 0.2s;
+}
+
+.projects__item:nth-of-type(3) {
+    grid-area:  imagen3;
+    animation-delay: 0.3s;
+}
+
+.projects__item:nth-of-type(4) {
+    grid-area:  imagen4;
+    animation-delay: 0.4s;
+}
+
+.projects__item:nth-of-type(5) {
+    grid-area:  imagen5;
+    animation-delay: 0.5s;
+}
+
+.projects__item:nth-of-type(6) {
+    grid-area:  imagen6;
+    animation-delay: 0.6s;
+}
+
+.projects__item:nth-of-type(7) {
+    grid-area:  imagen7;
+    animation-delay: 0.7s;
+}
+
+.projects__item:nth-of-type(8) {
+    grid-area:  imagen8;
+    animation-delay: 0.8s;
+}
+
+.projects__item:nth-of-type(9) {
+    grid-area:  imagen9;
+    animation-delay: 0.9s;
+}
+
+.projects__item:nth-of-type(10) {
+    grid-area:  imagen10;
+    animation-delay: 1s;
+}
+
+.projects__hover {
+    position: absolute;
+    background: rgb(76, 100, 238);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(100%);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.projects__item:hover .projects__hover {
+    transform: translateX(0%);
+}
+
+.projects__icon {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.subtitle{
+    color: #f9f9f9;
+}
+
+/* texto pagina quienes somos*/
+main {
+    padding-top: 20px; /* Espacio superior entre el nav y el texto */
+    padding-bottom: 20px; /* Espacio inferior entre el texto y el footer */
+}
+section {
+    max-width: 1200px; /* Limita el ancho del contenido para facilitar la lectura */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    padding: 20px; /* Agrega un espacio alrededor del contenido */
+    text-align: justify; /* Justifica el texto para una distribución uniforme */
+}
+
+h1 {
+    font-size: 42px;
+    color: #080202;
+    margin-bottom: 20px;
+    transition: color 0.3s; /* Agregamos una transición suave al color */
+}
+
+p {
+    font-size: 28px;
+    line-height: 1.6;
+    color: #050505;
+    margin-bottom: 20px;
+    transition: color 0.3s; /* Agregamos una transición suave al color */
+}
+
+/* Cambio de color al pasar el cursor por encima */
+h1:hover {
+    color: #2600ff; /* Cambia el color a rojo cuando el cursor está encima */
+}
+
+p:hover {
+    color: #fff; /* Cambia el color a rojo cuando el cursor está encima */
+}
+
+.about-us {
+    background-color: transparent; /* Fondo transparente para mostrar el fondo dorado brillante */
+    padding: 50px;
+    text-align: center;
+    color: rgb(17, 1, 1); /* Texto en blanco para destacar sobre el fondo dorado */
+    font-family: Arial, sans-serif; /* Cambia la fuente según tus preferencias */
+}
+
+.about-us h2 {
+    font-size: 35px; /* Tamaño de fuente grande para el título */
+    font-style: italic; /* Texto en cursiva */
+    margin-bottom: 20px;
+}
+
+.about-us h3 {
+    font-size: 30px; /* Tamaño de fuente para los subtítulos */
+    margin-top: 20px; /* Espacio superior */
+    color: gold;
+}
+
+.about-us p {
+    font-size: 20px; /* Tamaño de fuente para el texto principal */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin: 20px 0; /* Espaciado vertical */
+}
+
+.about-us a {
+    color: #007BFF; /* Enlaces en un tono de azul */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilos para los enlaces de contacto */
+.about-us a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+.about {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 80px;
+    justify-items: center;
+    align-items: center;
+}
+
+.about__img {
+    text-align: center;
+}
+
+.about__img--left {
+    text-align: left;
+}
+
+.about__picture {
+    max-width: 80%;
+    box-shadow: 30px 20px 10px 10px #000;
+    border-radius: 1em;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.about__picture:hover {
+    transform: scale(1.05);
+    box-shadow: 40px 30px 20px 20px #000;
+}
+
+.about__paragraph {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* estilos para personas que trabajan */
+.testimony__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 3px;
+    place-content: auto;
+}
+
+.testimony__item {
+    /* width: 80%; */ /* Puedes eliminar esta propiedad si deseas que los elementos ocupen todo el ancho */
+    margin: 0 auto;
+    background: rgba(5, 199, 233, 0.37);
+    box-shadow: 0 15px 10px rgba(148, 69, 141, 0.986);
+    border-radius: 7px;
+    padding: 30px 25px;
+    color: #1d0000;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.testimony__item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 20px rgb(55, 143, 243);
+}
+
+.testimony__person {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.testimony__img {
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimony__img:hover {
+    transform: scale(1.1);
+}
+
+.testimony__name {
+     font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.testimony__verification {
+    color: #E0AFA0;
+    font-weight: 700;
+}
+
+.testimony__review {
+    font-weight: 300;
+}
+
+.testimony p{
+    font-size: 18px;
+    line-height: 1.6;
+    color: #050505;
+    margin-bottom: 20px;
+    transition: color 0.3s; 
+}
+
+
+
+
+
